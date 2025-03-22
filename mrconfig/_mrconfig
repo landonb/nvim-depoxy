@@ -1,0 +1,109 @@
+# vim:tw=0:ts=2:sw=2:et:norl:nospell:ft=bash
+# Author: Landon Bouma <https://tallybark.com/>
+# Project: https://github.com/DepoXy/nvim-depoxy#🐇
+# License: MIT
+
+# USAGE: This file can be implicitly loaded using 'chain',
+# e.g.:
+#
+#   ln -sf /path/to/nvim-depoxy/_mrconfig /path/to/plugins/.mrconfig
+#
+# And then from your myrepos config:
+#
+#   [/path/to/plugins/.mrconfig]
+#   chain = true
+#
+# Also add /path/to/plugins/.mrconfig to ~/.mrtrust
+
+# CXREF: The DepoXy project loads this OMR config via:
+# ~/.depoxy/ambers/home/.kit/nvim/_mrconfig
+
+# ========================================================================
+# ------------------------------------------------------------------------
+
+[DEFAULT]
+# SAVVY: Because include, [SECTION] changes to final one from last `cat` file.
+# - See final [DEFAULT] below to handle this.
+
+# ========================================================================
+# ------------------------------------------------------------------------
+
+# SAVVY: "Disabled" plugins are tagged '!vim_active' so author can track
+# what plugins they have defined in their plugin manager configs. (Back
+# when I used built-in |packadd|, I kept these under ~/.vim/pack/*/opt/*
+# but there are lots of 'em, and I don't want to add unnecessary noise
+# to the lazy.nvim or vim-plug config.)
+#
+# CXREF: DepoXy users: If you define new tag names, you need to add them
+# to the upstream `cat` gaits (tedious, I know).
+# - ~/.kit/nvim project 'skip' block:
+#     ~/.depoxy/ambers/home/.kit/nvim/_mrconfig @ 28
+# - ~/.kit/nvim/_mrconfig `mr_cat` call if-gait:
+#     ~/.depoxy/ambers/home/.kit/_mrconfig @ 139
+# You'll also see the `unset` at the bottom of this file.
+#
+# USAGE: MR_INCLUDE=vim_active mr -d / run sh -c 'echo "${MR_REPO}"'
+# - You can also `MR_INCLUDE=!vim_active`.
+[DEFAULT]
+lib = MR_EXCLUSIVE_TAGS=vim_active
+
+# ========================================================================
+# ------------------------------------------------------------------------
+
+# Caller must use `chain = true` to load this config, so the
+# cwd is the root of this file, and the projects defined in
+# the mrconfig/ files are cloned to the same directory.
+#
+# To find and load the mrconfig/ config files, we can get the
+# path to this file from `mr` (I mean, it's *probably* the
+# ".mrconfig" file in $(pwd), but we'll still check). Then
+# resolve its path if a symlink, and we've found the config.
+#
+# - HSTRY/2025-01-30: MR_SECTION_CONFIG new to OMR `mr` fork.
+#
+# - USAGE: All _mrconfig-* files in the mrconfig/ subdirectory
+#          are automatically loaded.
+#
+#          - You don't need to register them with ~/.mrtrust,
+#            nor add them to any config... so please trust that
+#            no one else can add their own files thereunder and
+#            become the first `mr` exploiter.
+#
+# - In DepoXy, the mrconfig/ path resolves to:
+#
+#   ${NEOVIM_REPOS:-${DOPP_KIT:-${HOME}/.kit}/nvim}/nvim-depoxy/mrconfig
+
+include =
+  load_nvim_mrconfigs () {
+    local mrconfigs
+    mrconfigs="$(dirname -- "$(realpath -- "${MR_SECTION_CONFIG}")")"
+    #
+    if [ ! -d "${mrconfigs}" ]; then
+      >&2 echo "ERROR: Missing nvim-depoxy/mrconfig directory: ${mrconfigs}"
+      #
+      return 1
+    fi
+    #
+    local mrconfig=""
+    for mrconfig in $(find "${mrconfigs}" -name "_mrconfig-*"); do
+      # SAVVY: The project config can use either absolute paths to each
+      # project, or the config can use a path relative to this file's
+      # parent directory (because of how myrepos `chain = true` works).
+      mr_cat "${mrconfig}"
+    done
+  }
+  load_nvim_mrconfigs
+
+# ========================================================================
+# ------------------------------------------------------------------------
+
+# SAVVY: End with a [DEFAULT] section, even if it's empty, because previous
+#        mr_cat output ends with a [/path/to/project] section. If we didn't,
+#        the file that cats this file would have to specify [DEFAULT] again
+#        to avoid config after the cat from going to [/path/to/project].
+[DEFAULT]
+lib = unset -v MR_EXCLUSIVE_TAGS
+
+# ========================================================================
+# ------------------------------------------------------------------------
+

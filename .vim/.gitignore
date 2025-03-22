@@ -1,0 +1,36 @@
+# vim:tw=0:ts=2:sw=2:et:norl:nospell:ft=gitignore
+# Author: Landon Bouma <https://tallybark.com/>
+# Project: https://github.com/DepoXy/depoxy#🍯
+# License: MIT
+
+# *** Standard Vim
+
+# :netrw history
+/.netrwhist
+
+/sessions/
+
+# mkview/loadview files.
+/view/
+
+# *** (Neovim) DepoXy (Vim)
+
+# autoload/plug.vim
+#   → deops/junegunn/start/vim-plug/plug.vim
+#     → ~/.kit/nvim/junegunn/start/vim-plug/plug.vim
+# CXREF: DepoXy uses updateDeps (update-faithful.sh) to manage
+# this dependency:
+#   update_deps_vim | link_hard_dep_vim_pack_junegunn_vim_plug
+#     ~/.depoxy/ambers/home/.kit/nvim/_mrconfig
+#     ~/.depoxy/ambers/home/.kit/git/ohmyrepos/lib/my-deps-manage-vim.sh
+# See also also non-deps approach (symlinks vim-plug/ path):
+#   wire_dot_vimrc_and_autoload
+#     ~/.depoxy/ambers/home/infuse-nvim-depoxy
+/autoload/plug.vim
+
+# Symlink to CoC settings from another project.
+# LATER/2025-01-31: Currently this symlink created manually
+# and assumes DepoXy path structure, e.g.,
+#   -> ../../DepoXy/start/vim-depoxy-coc-defaults/coc-settings.json
+/coc-settings.json
+

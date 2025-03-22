@@ -1,4 +1,8 @@
 {
-  "lazy.nvim": { "branch": "main", "commit": "d8f26efd456190241afd1b0f5235fe6fdba13d4a" },
-  "vim-startuptime": { "branch": "master", "commit": "ac2cccb5be617672add1f4f3c0a55ce99ba34e01" }
+  "catppuccin": { "branch": "main", "commit": "5b5e3aef9ad7af84f463d17b5479f06b87d5c429" },
+  "clasp.nvim": { "branch": "master", "commit": "c3bebd9e1c4588b68dff8fff11e60874030b5170" },
+  "lazy.nvim": { "branch": "main", "commit": "7e6c863bc7563efbdd757a310d17ebc95166cef3" },
+  "mini.nvim": { "branch": "main", "commit": "f89f4e20dc998d8f0cb8b21734877a64a9adee92" },
+  "multicursor.nvim": { "branch": "1.0", "commit": "86537c3771f1989592568c9d92da2e201297867a" },
+  "palenightfall.nvim": { "branch": "main", "commit": "25a1e7d43256834a671174e5d83edb57f7bec1e0" }
 }

@@ -1,0 +1,21 @@
+# vim:tw=0:ts=2:sw=2:et:norl:ft=gitignore
+# Author: Landon Bouma <https://tallybark.com/>
+# Project: https://github.com/DepoXy/nvim-depoxy#🐇
+# License: MIT
+
+# J'accuse!
+.DS_Store
+
+# Symlink to your personal spell file (track in another repo):
+/.config/nvim/spell/en.utf-8.add
+# Compiled spell file (local, untracked):
+/.config/nvim/spell/en.utf-8.add.spl
+
+# Ignore generated directory. See:
+#   ~/.depoxy/ambers/home/.kit/nvim/landonb/dubs_project_tray/generate_links.sh
+/mrinfuse/landonb/dubs_project_tray/dubs_cuts/
+
+# CXREF: See .vim/.gitignore for more exclude rules:
+#
+# ~/.kit/nvim/nvim-depoxy/.vim/.gitignore
+

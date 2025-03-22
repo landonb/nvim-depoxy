@@ -1,0 +1,111 @@
+#!/usr/bin/env bash
+# vim:tw=0:ts=2:sw=2:et:norl:ft=sh
+# Author: Landon Bouma <https://tallybark.com/>
+# Project: https://github.com/DepoXy/nvim-depoxy#🐇
+# License: MIT. Please find more in the LICENSE file.
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# USAGE: Use this script as your EDITOR for much quicker `git commit -v`
+#        and git-rebase EDITOR startup, etc., and to inject some useful
+#        commands.
+#
+#        - The first useful change is that the editor starts in Insert
+#          mode, so you can immediately type the commit message or edit
+#          the rebase-todo.
+#
+#        - The second useful change is that <Ctrl-s> will save and exit
+#          from any mode.
+#
+#          - So for most use cases, e.g., `git commit -v`, you can type
+#            your message and hit <Ctrl-s>, and you're done.
+#
+#          - Though if you need additional features, it's still (Neo)vim!
+#
+#        - Starting Vim via this script also loads a few basic plugins
+#          for some rudimentary feature support, including:
+#
+#          - It sources mswin.vim (for both Vim and Neovim), so that
+#            <Ctrl-z> calls undo, and doesn't, e.g., suspend the app;
+#            and so that Cut-Copy-Paste work as expected;
+#
+#          - It sources tpope/vim-sensible, to apply defaults that
+#            most folx will apprepreciate; and
+#
+#          - It sources a few of the author's preferred plugins (just
+#            a few of the almost 100 plugins I normally activate).
+#
+#            - Though note that since updating the underlying Neovim
+#              startup config to use lazy.nvim (circa 2025), you can
+#              `Lazy load {plugin}` any of the other plugins.
+#
+#        - Note that *most* stock Vim commands work as expected,
+#          with a few exceptions:
+#
+#          - As mentioned, <Ctrl-z> is undo; and <Ctrl-x>,
+#            <Ctrl-c>, <Ctrl-v>, and <Ctrl-a> are Cut, Copy,
+#            Paste, and Select All, respectively; mswin.vim
+#            also adds a few other maps.
+#
+#          - Use <Ctrl-q> to start blockwise Visual mode (which
+#            is duplicate of <Ctrl-v> command map in stock Vim).
+#
+#          - <Ctrl-l> enters digraph instead of <Ctrl-k>, to match
+#            how author normally has <Ctrl-l> wired (I may <Ctrl-j>
+#            and <Ctrl-k> to buffer pref/next) / REFER:
+#
+#                https://github.com/DepoXy/nvim-depoxy#🐇
+
+# ALTLY: If you don't want any plugins, here's a similar approach that
+#        starts in Insert mode with the cursor at the top of the file:
+#
+#          vim --noplugin -c "startinsert" -c "norm! gg" "$@"
+#
+#          nvim --noplugin -c "startinsert" -c "norm! gg" "$@"
+
+# REFER: :h initialization
+
+editor_vim_0_0_insert_minimal() {
+  # CXREF: ~/.kit/nvim/nvim-depoxy/bin/editor-vim-0-0-insert-minimal.vimrc
+  local git_commit_v_vimrc="$(dirname -- "$0")/editor-vim-0-0-insert-minimal.vimrc"
+
+  local editor="vim"
+  if ${EDITOR_PREFER_NVIM:-false}; then
+    # EDITOR_PREFER_NVIM honored here, and by home-fries (bin/editor-vim-0-0-insert).
+    editor="nvim"
+
+    git_commit_v_vimrc="$(dirname -- "$0")/editor-vim-0-0-insert-minimal.lua"
+  fi
+
+  if [ -d "${HOME}/.vim/pack" ]; then
+    # Using conventional ~/.vim/pack path, and relying on |packadd|.
+    ${editor} -u "${git_commit_v_vimrc}" --noplugin -c "startinsert" -c "norm! gg" "$@"
+  else
+    # Using arbitrary plugins path, and bootstrapping with vim-plug.
+
+    # SAVVY: Note that ~/.kit/nvim is just where DepoXy keeps its plugins
+    # by default.
+    # - It's similar to ~/.vim/plugged that vim-plug uses as an example,
+    #   or ~/projects that the lazy.nvim docs use for its opts.dev.path.
+    local plugins_dir="${NVIMDEPOXY_PLUG_PATH:-${HOME}/.kit/nvim}"
+
+    if [ -d "${plugins_dir}" ]; then
+      # Omit --noplugin or vim-plug won't load plugins.
+      NVIMDEPOXY_PLUG_PATH="${plugins_dir}" \
+        ${editor} -u "${git_commit_v_vimrc}" -c "startinsert" -c "norm! gg" "$@"
+    else
+      >&2 echo "ERROR: Please set NVIMDEPOXY_PLUG_PATH to Vim plugins root"
+      >&2 echo "- Or create ~/.vim/pack or ~/.kit/nvim"
+
+      return 1
+    fi
+  fi
+}
+
+# ***
+
+main() {
+  editor_vim_0_0_insert_minimal "$@"
+}
+
+main "$@"
