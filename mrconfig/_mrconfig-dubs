@@ -406,4 +406,5 @@ lib = remote_set starter https://github.com/LazyVim/LazyVim.git
 # For testing vanilla LazyVim.
 [LazyVim/starter]
 lib = remote_set starter https://github.com/LazyVim/starter.git
+infuse = link_private_exclude "$@"
 
