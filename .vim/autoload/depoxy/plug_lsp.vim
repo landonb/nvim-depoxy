@@ -16,10 +16,12 @@
 " -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
 function! g:depoxy#plug_lsp#load() abort
+
   " ISOFF/2025-02-12: Loading CoC fails if it's not built/installed,
   " and I've since essentially switched to NeoVim (though for some
   " reason I'm still maintaining somewhat of a working Vim config,
   " albeit with fewer features), so we'll skip CoC for classic Vim.
+  "
   return
 
   " Plug '~/.kit/nvim/prabirshrestha/opt/vim-lsp'
