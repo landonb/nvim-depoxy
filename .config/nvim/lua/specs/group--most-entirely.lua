@@ -592,10 +592,13 @@ return {
     lazy = not lazy_profile["vim-clip-expand-path"],
   },
 
-  {
-    dir = "~/.kit/nvim/DepoXy/start/vim-depoxy-coc-defaults",
-    lazy = not lazy_profile["vim-depoxy-coc-defaults"],
-  },
+  -- ISOFF/2025-03-26: Deprecated.
+  -- - LATER: Remove this spec after removing sources from OMR.
+  --
+  -- {
+  --   dir = "~/.kit/nvim/DepoXy/start/vim-depoxy-coc-defaults",
+  --   lazy = not lazy_profile["vim-depoxy-coc-defaults"],
+  -- },
 
   {
     dir = "~/.kit/nvim/landonb/ansible-vim",

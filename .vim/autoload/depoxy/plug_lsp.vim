@@ -24,15 +24,15 @@ function! g:depoxy#plug_lsp#load() abort
   "
   return
 
-  " Plug '~/.kit/nvim/prabirshrestha/opt/vim-lsp'
-  " Plug '~/.kit/nvim/prabirshrestha/opt/async.vim'
-  " Plug '~/.kit/nvim/mattn/opt/vim-lsp-settings'
-  " Plug '~/.kit/nvim/prabirshrestha/opt/asyncomplete.vim'
-  " Plug '~/.kit/nvim/prabirshrestha/opt/asyncomplete-lsp.vim'
-  " Plug '~/.kit/nvim/ryanolsonx/opt/vim-lsp-typescript'
-  " Plug '~/.kit/nvim/ryanolsonx/opt/vim-lsp-javascript'
-  Plug '~/.kit/nvim/neoclide/start/coc.nvim'
-  Plug '~/.kit/nvim/neoclide/start/coc-tsserver'
-  Plug '~/.kit/nvim/neoclide/start/coc-json'
+  " " Plug '~/.kit/nvim/prabirshrestha/opt/vim-lsp'
+  " " Plug '~/.kit/nvim/prabirshrestha/opt/async.vim'
+  " " Plug '~/.kit/nvim/mattn/opt/vim-lsp-settings'
+  " " Plug '~/.kit/nvim/prabirshrestha/opt/asyncomplete.vim'
+  " " Plug '~/.kit/nvim/prabirshrestha/opt/asyncomplete-lsp.vim'
+  " " Plug '~/.kit/nvim/ryanolsonx/opt/vim-lsp-typescript'
+  " " Plug '~/.kit/nvim/ryanolsonx/opt/vim-lsp-javascript'
+  " Plug '~/.kit/nvim/neoclide/start/coc.nvim'
+  " Plug '~/.kit/nvim/neoclide/start/coc-tsserver'
+  " Plug '~/.kit/nvim/neoclide/start/coc-json'
 endfunction
 

@@ -292,26 +292,4 @@ vim-easymotion/
 /zhou13/opt/vim-easyescape/
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #
-# *** CoC and related LSP.
-
-# - Note that DepoXy symlinks a file we cannot set an ignore rule on:
-#     ../coc-settings.json
-#   Because this file is symlinked at ~/.kit/nvim/.gitignore.
-# - So that ignore rule is upstream in the Dubs Vim project.
-#     https://github.com/landonb/dubs-vim#🖖
-/neoclide/start/coc.nvim/
-/neoclide/start/coc-json/
-/neoclide/start/coc-tsserver/
-
-# vim-lsp
-/prabirshrestha/opt/vim-lsp/
-/prabirshrestha/opt/async.vim/
-/prabirshrestha/opt/asyncomplete.vim/
-/prabirshrestha/opt/asyncomplete-lsp.vim/
-/mattn/opt/vim-lsp-settings/
-# Deprecated Language Servers (use vim-lsp-settings instead).
-/ryanolsonx/opt/vim-lsp-javascript/
-/ryanolsonx/opt/vim-lsp-typescript/
-
-# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #
 

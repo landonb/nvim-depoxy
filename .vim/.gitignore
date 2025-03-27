@@ -28,9 +28,3 @@
 #     ~/.depoxy/ambers/home/infuse-nvim-depoxy
 /autoload/plug.vim
 
-# Symlink to CoC settings from another project.
-# LATER/2025-01-31: Currently this symlink created manually
-# and assumes DepoXy path structure, e.g.,
-#   -> ../../DepoXy/start/vim-depoxy-coc-defaults/coc-settings.json
-/coc-settings.json
-

@@ -62,7 +62,6 @@ function obj:profile(profile)
 
   local javascript_typescript = not disabled
 
-  local coc_plugs = false -- LATER: Leave disabled, or use?
   local nvim_cmps = not disabled and false -- FIXME: AUDIT
 
   local reSTery = not disabled
@@ -192,7 +191,6 @@ function obj:profile(profile)
 
     -- Generic \j \J file path clipboarc-copiers | I use custom \j \J from DXC
     ["vim-clip-expand-path"] = always_lazy,
-    ["vim-depoxy-coc-defaults"] = coc_plugs,
     -- Ansible 2.x syn. hl for YAML playbooks, Jinja2 templates, and hosts files
     ["ansible-vim"] = batch_06,
     ["dubs_appearance"] = minimal or batch_01,
@@ -325,13 +323,6 @@ function obj:profile(profile)
     ["cmp-buffer"] = nvim_cmps,
     ["cmp-path"] = nvim_cmps,
     ["cmp-cmdline"] = nvim_cmps,
-    --
-    -- CXREF:
-    -- ~/.kit/nvim/nvim-depoxy/.config/nvim/lua/specs/group--lsp.lua
-    -- ~/.kit/nvim/nvim-depoxy/mrconfig/_mrconfig-lsp--coc
-    ["coc.nvim"] = coc_plugs,
-    ["coc-tsserver"] = coc_plugs,
-    ["coc-json"] = coc_plugs,
 
     -- CXREF:
     -- ~/.depoxy/ambers/home/.config/nvim/lua/minimal/nvim-treesitter.lua

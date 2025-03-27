@@ -23,7 +23,6 @@ function! g:depoxy#plug_dubs#load() abort
   " CXREF:
   "   ~/.kit/nvim/nvim-depoxy/.vim/.vimrc
   Plug '~/.kit/nvim/DepoXy/start/vim-clip-expand-path'
-  Plug '~/.kit/nvim/DepoXy/start/vim-depoxy-coc-defaults'
 
   " *** ~/.kit/nvim/landonb
 
