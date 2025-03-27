@@ -6,6 +6,13 @@
 # ========================================================================
 # ------------------------------------------------------------------------
 
+# ISOFF: DEPRECATION NOTICE
+#
+# - This config file is obsolete.
+
+# ========================================================================
+# ------------------------------------------------------------------------
+
 [DEFAULT]
 order = 820
 
@@ -101,6 +108,8 @@ infuse = link_private_exclude "$@"
 
 # https://github.com/neoclide/coc.nvim
 [neoclide/start/coc.nvim]
+# ISOFF/2025-03-26: Thanks for all your hard work, CoC!
+skip = true
 lib = remote_set starter https://github.com/neoclide/coc.nvim.git
 echoInstallHelp = echoInstallHelp 'os_all' 'dxy_all' 'also LSPs' 'CoC'
 isInstalled =
