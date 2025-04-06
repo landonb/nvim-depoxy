@@ -237,6 +237,14 @@ lib =
   # For lazy.nvim (I assume):
   MR_GITHUB_HOST_ORIGIN=https://github.com/ remote_set origin https://github.com/nvim-lualine/lualine.nvim.git
 
+# FIXME/2025-04-03: Has PR'able tweak you should submit.
+[${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/noice.nvim]
+lib =
+  remote_set publish https://github.com/landonb/noice.nvim.git
+  remote_set starter https://github.com/folke/noice.nvim.git
+  # For lazy.nvim (I assume):
+  MR_GITHUB_HOST_ORIGIN=https://github.com/ remote_set origin https://github.com/folke/noice.nvim.git
+
 # FIXME/2025-03-03: Has PR'able tweak you should submit.
 [${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/snacks.nvim]
 lib =
