@@ -7,7 +7,7 @@
 # ------------------------------------------------------------------------
 
 [DEFAULT]
-order = 830
+order = 831
 
 # ========================================================================
 # ------------------------------------------------------------------------
@@ -231,6 +231,7 @@ lib = remote_set starter https://github.com/folke/which-key.nvim.git
 
 # FIXME/2025-03-15: Has PR'able tweak you should submit.
 [${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/lualine.nvim]
+order = 379
 lib =
   remote_set publish https://github.com/landonb/lualine.nvim.git
   remote_set starter https://github.com/nvim-lualine/lualine.nvim.git
@@ -239,6 +240,7 @@ lib =
 
 # FIXME/2025-04-03: Has PR'able tweak you should submit.
 [${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/noice.nvim]
+order = 379
 lib =
   remote_set publish https://github.com/landonb/noice.nvim.git
   remote_set starter https://github.com/folke/noice.nvim.git
@@ -247,6 +249,7 @@ lib =
 
 # FIXME/2025-03-03: Has PR'able tweak you should submit.
 [${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/snacks.nvim]
+order = 379
 lib =
   remote_set publish https://github.com/landonb/snacks.nvim.git
   remote_set starter https://github.com/folke/snacks.nvim.git
@@ -255,6 +258,7 @@ lib =
 
 # FIXME/2025-03-24: Has PR'able tweak you should submit.
 [${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/which-key.nvim]
+order = 379
 lib =
   remote_set publish https://github.com/landonb/which-key.nvim.git
   remote_set starter https://github.com/folke/which-key.nvim.git
@@ -839,24 +843,20 @@ skip = mr_exclusive !vim_active
 
 # ISOFF/2019-03-19: Disabled vim-endwise: it's frustrating me.
 [tpope/opt/vim-endwise]
-order = 840
 lib = remote_set starter https://github.com/tpope/vim-endwise.git
 skip = mr_exclusive !vim_active
 
 [tpope/opt/vim-pathogen]
-order = 840
 lib = remote_set starter https://github.com/tpope/vim-pathogen.git
 skip = mr_exclusive !vim_active
 
 # ABOUT: Looks like a Viml development library.
 [tpope/opt/vim-scriptease]
-order = 840
 lib = remote_set starter https://github.com/tpope/vim-scriptease.git
 skip = mr_exclusive !vim_active
 
 # GROUP: #colorscheme_plugins
 [tpope/opt/vim-vividchalk]
-order = 840
 lib = remote_set starter https://github.com/tpope/vim-vividchalk.git
 skip = mr_exclusive !vim_active
 
