@@ -393,6 +393,7 @@ lib = remote_set publish https://github.com/embrace-vim/vim-webopen.git
 # dob and all its dependencies... <sigh> what a mess, isn't it.
 
 [landonb/nvim-lazyb]
+order = 141
 lib =
   remote_set publish https://github.com/landonb/nvim-lazyb.git
   remote_set starter https://github.com/LazyVim/starter.git
