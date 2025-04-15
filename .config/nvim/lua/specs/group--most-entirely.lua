@@ -117,6 +117,9 @@ return {
       --
       --   { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
       --   { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      --
+      -- CXREF:
+      -- ~/.local/share/nvim_lazyb/lazy/LazyVim/lua/lazyvim/plugins/editor.lua
       {
         "s",
         mode = { "n" },
