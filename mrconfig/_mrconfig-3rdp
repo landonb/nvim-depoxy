@@ -604,6 +604,9 @@ lib = remote_set starter https://github.com/nvim-telescope/telescope-file-browse
 [nvim-telescope/start/telescope-fzf-native.nvim]
 lib = remote_set starter https://github.com/nvim-telescope/telescope-fzf-native.nvim.git
 echoInstallHelp = echoInstallHelp 'os_all' 'dxy_all'
+isInstalled =
+  echo "\$ test -x build/libfzf.so"
+  test -x build/libfzf.so
 install =
   cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release
   cmake --build build --config Release
