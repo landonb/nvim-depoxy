@@ -112,10 +112,17 @@ lib = remote_set starter https://github.com/doctorfree/nvim-lazyman.git
 # CXREF: See also more blather: _dxy_source_shell_goodies_nvim_Lazyman
 #   ~/.depoxy/ambers/core/startapps.sh
 # So don't bother installing unless/until you need/want it.
-echoInstallHelp = echoInstallHelp 'os_none' 'dxy_none'
+# ISOFF/2025-09-09: Hide from reminder task list.
+#   echoInstallHelp = echoInstallHelp 'os_none' 'dxy_none'
 # CXREF:
 # ~/.kit/nvim/doctorfree/nvim-lazyman/lazyman.sh
 install =
+  # ISOFF/2025-09-09: I audited the code (best I could) last winter,
+  # and while it seems harmless, it's a breathtaking project, and I'd
+  # suggest you isolate it in a VM or container just to be safe.
+  >&2 echo "ORNOT: Do you really trust this project?"
+  exit 1
+  #
   # Assumes you ran `infuse` to wire ~/.config/nvim-Lazyman symlink
   # BWARE/2025-02-23: I audited this file today. It's long! Looks safe.
   # - REFER: -H to `brew install neovim --HEAD`
