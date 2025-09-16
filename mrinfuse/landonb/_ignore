@@ -32,6 +32,17 @@
 # This is the shell syntax file that's currently hot:
 #  /dubs_ftype_mess/syntax/sh-Version_189-lb.vim
 
+# -> /private/user/.depoxy/ambers/home/.kit/nvim/landonb/nvim-lazyb/lua/config/keymaps-client.lua
+/nvim-lazyb/lua/config/keymaps-client.lua
+# -> /private/user/.depoxy/running/home/.kit/nvim/landonb/nvim-lazyb/lua/config/keymaps-private.lua
+/nvim-lazyb/lua/config/keymaps-private.lua
+# -> /private/user/.depoxy/ambers/home/.kit/nvim/landonb/nvim-lazyb/lua/config/options-client.lua
+/nvim-lazyb/lua/config/options-client.lua
+# -> /private/user/.depoxy/running/home/.kit/nvim/landonb/nvim-lazyb/lua/config/options-private.lua
+/nvim-lazyb/lua/config/options-private.lua
+# -> /private/user/.kit/nvim/nvim-depoxy/.config/nvim/lua/config/profile.lua
+/nvim-lazyb/lua/config/profile.lua
+
 # -> ~/.kit/nvim/landonb/vim-reST-highfive/after/syntax/rst.vim
 /vim-reST-highfive/FIVERs.vim
 
