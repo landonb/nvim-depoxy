@@ -43,6 +43,7 @@
 # -> /private/user/.kit/nvim/nvim-depoxy/.config/nvim/lua/config/profile.lua
 /nvim-lazyb/lua/config/profile.lua
 
-# -> ~/.kit/nvim/landonb/vim-reST-highfive/after/syntax/rst.vim
+# Aka ~/.kit/nvim/landonb/vim-reST-highfive/after/syntax/rst.vim
+# -> after/syntax/rst.vim
 /vim-reST-highfive/FIVERs.vim
 
