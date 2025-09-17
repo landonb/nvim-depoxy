@@ -47,3 +47,7 @@
 # -> after/syntax/rst.vim
 /vim-reST-highfive/FIVERs.vim
 
+# Aka ~/.kit/nvim/landonb/vim-reST-highdefs/doc/example-highdefs.rst
+# -> ../../vim-reST-highdefs/doc/example-highdefs.rst
+/vim-reST-highfive/doc/example-highdefs.rst
+

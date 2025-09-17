@@ -285,8 +285,13 @@ lib = remote_set publish https://github.com/landonb/vim-reST-highdefs.git
 # "Innovative reStructuredText five-letter word highlighter"
 [landonb/vim-reST-highfive]
 lib = remote_set publish https://github.com/landonb/vim-reST-highfive.git
-# 2022-10-05: So I can search-find the file via Project Tray, b/c I update this file often.
-infuse = symlink_mrinfuse_file "${MR_REPO}/after/syntax/rst.vim" "FIVERs.vim"
+infuse =
+  link_private_exclude "$@"
+  # 2022-10-05: So I can search-find the file via Project Tray, b/c I update this file often.
+  #  symlink_mrinfuse_file "${MR_REPO}/after/syntax/rst.vim" "FIVERs.vim"
+  symlink_overlay_file "after/syntax/rst.vim" "FIVERs.vim"
+  # 2025-09-17: Convenience.
+  symlink_overlay_file "../vim-reST-highdefs/doc/example-highdefs.rst" "doc/example-highdefs.rst"
 
 # Original project.
 # "Highlight arbitrary horizontal rule lines in reST docs"
