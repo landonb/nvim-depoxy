@@ -131,6 +131,12 @@ if vim.g.neovide then
   -- Functionality > Fullscreen
   --  vim.g.neovide_fullscreen = true
   --
+  -- DUNNO/2025-09-23: On GNOME Shell/Wayland/mutter,
+  -- this option doesn't seem to have any effect...
+  -- - UCASE: I like an *almost* fullscreen Neovide window,
+  --   so I'd hope Neovide would remember how I had it sized
+  --   and positioned when re-opening. But Neovide always
+  --   opens maximized, despite this opt.
   -- Functionality > Remember Previous Window Size
   --  vim.g.neovide_remember_window_size = true
   --
