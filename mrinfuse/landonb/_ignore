@@ -9,6 +9,8 @@
 # -> ~/.kit/nvim/nvim-depoxy/mrinfuse/landonb/_ignore (this file)
 /.ignore
 
+/.whilom/
+
 /*/doc/tags
 /.whilom/*/doc/tags
 
