@@ -224,8 +224,10 @@ return {
   },
 
   {
-    -- "echasnovski/mini.icons",
-    dir = "~/.kit/nvim/echasnovski/mini.icons",
+    -- HSTRY/2025-10-05: Rebranded from echasnovski/mini.icons:
+    --   https://github.com/nvim-mini/mini.nvim/discussions/1970
+    -- "nvim-mini/mini.icons",
+    dir = "~/.kit/nvim/nvim-mini/mini.icons",
     -- lazy = not lazy_profile["mini.icons"],
     lazy = true,
 

@@ -173,8 +173,8 @@ lib = remote_set starter https://github.com/dstein64/vim-startuptime.git
 [easymotion/start/vim-easymotion]
 lib = remote_set starter https://github.com/easymotion/vim-easymotion.git
 
-[echasnovski/mini.icons]
-lib = remote_set starter https://github.com/echasnovski/mini.icons.git
+[nvim-mini/mini.icons]
+lib = remote_set starter https://github.com/nvim-mini/mini.icons.git
 infuse = link_private_exclude "$@"
 
 # CXREF: https://github.com/fatih/vim-go
@@ -597,7 +597,7 @@ lib = remote_set starter https://github.com/nvim-neo-tree/neo-tree.nvim.git
 # release branch (which will get consistent updates) 0.1.x.
 #   It is not suggested to run latest master."
 # https://github.com/nvim-telescope/telescope.nvim#installation
-# CALSO: https://github.com/echasnovski/mini.pick
+# CALSO: https://github.com/nvim-mini/mini.pick
 # GROUP: #vim-fuzzy_finder
 [nvim-telescope/start/telescope.nvim]
 lib = remote_set starter https://github.com/nvim-telescope/telescope.nvim.git

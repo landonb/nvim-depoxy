@@ -27,7 +27,7 @@
 --   https://github.com/L3MON4D3/LuaSnip
 --   https://github.com/saadparwaiz1/cmp_luasnip
 -- - For mini.snippets users:
---   https://github.com/echasnovski/mini.snippets
+--   https://github.com/nvim-mini/mini.snippets
 --   https://github.com/abeldekat/cmp-mini-snippets
 -- - For ultisnips users:
 --   https://github.com/SirVer/ultisnips

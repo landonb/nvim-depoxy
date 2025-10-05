@@ -202,7 +202,6 @@
 /dstein64/vim-startuptime/
 /easymotion/start/
 vim-easymotion/
-/echasnovski/mini.icons/
 /editorconfig/start/editorconfig-vim/
 /editorconfig/start/vim-go/
 /flazz/opt/vim-colorschemes/
@@ -244,6 +243,7 @@ vim-easymotion/
 /neovim/nvim-lspconfig/
 /numToStr/start/Comment.nvim/
 /nvim-lua/start/plenary.nvim/
+/nvim-mini/mini.icons/
 /nvim-neo-tree/start/neo-tree.nvim/
 /nvim-telescope/start/telescope-file-browser.nvim/
 /nvim-telescope/start/telescope-fzf-native.nvim/
