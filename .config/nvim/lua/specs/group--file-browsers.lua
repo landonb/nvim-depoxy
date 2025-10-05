@@ -24,7 +24,7 @@
 return {
 
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-  
+
   -- {
   --   dir = "~/.kit/nvim/jeetsukumaran/start/vim-filebeagle",
   --   lazy = not lazy_profile["vim-filebeagle"],
@@ -120,7 +120,7 @@ return {
     -- You don't need to set any of these options.
     -- IMPORTANT!: this is only a showcase of how you can set default options!
     config = function(_, _opts)
-      local fb_actions = require "telescope".extensions.file_browser.actions
+      local fb_actions = require("telescope").extensions.file_browser.actions
 
       -- SAVVY/2025-01-28: Call vim.keymap.set, not vim.api.nvim_set_keymap.
       -- Latter is part of Neovim API and predates Lua advancements, and
@@ -139,7 +139,7 @@ return {
       --   require("telescope").extensions.file_browser.file_browser()
       -- end)
 
-      require'telescope'.setup {
+      require("telescope").setup({
         extensions = {
           file_browser = {
             theme = "ivy",
@@ -152,7 +152,7 @@ return {
                 -- WTF: What's wrong with this line? Oh, the var??
                 -- ["<C-h>"] = fb_actions.goto_home_dir,
                 ["<C-h>"] = function(prompt_bufnr)
-                  local fb_actions = require "telescope".extensions.file_browser.actions
+                  local fb_actions = require("telescope").extensions.file_browser.actions
                   fb_actions.goto_home_dir()
                 end,
                 ["<C-x>"] = function(prompt_bufnr)
@@ -168,13 +168,13 @@ return {
             },
           },
         },
-      }
+      })
 
       -- To get telescope-file-browser loaded and working with telescope,
       -- you need to call load_extension, somewhere after setup function:
       --
-      require("telescope").load_extension "file_browser"
-    end
+      require("telescope").load_extension("file_browser")
+    end,
   },
 
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -268,50 +268,50 @@ return {
 
     -- REFER: https://github.com/tamago324/lir.nvim
     config = function(_, _opts)
-      local actions = require'lir.actions'
-      local mark_actions = require 'lir.mark.actions'
-      local clipboard_actions = require'lir.clipboard.actions'
+      local actions = require("lir.actions")
+      local mark_actions = require("lir.mark.actions")
+      local clipboard_actions = require("lir.clipboard.actions")
 
       -- Open lir like netrw with vinegar or dirvish
       local map = vim.api.nvim_set_keymap
-      map('n', '-', [[<Cmd>execute 'e ' .. expand('%:p:h')<CR>]], { noremap = true })
+      map("n", "-", [[<Cmd>execute 'e ' .. expand('%:p:h')<CR>]], { noremap = true })
 
-      require'lir'.setup {
+      require("lir").setup({
         show_hidden_files = true,
         ignore = {}, -- { ".DS_Store", "node_modules" } etc.
         devicons = {
           enable = true,
-          highlight_dirname = true
+          highlight_dirname = true,
         },
         mappings = {
           -- https://github.com/justinmk/vim-dirvish/issues/213
-          ["<CR>"]  = actions.edit,
-          ["-"]     = actions.up,
+          ["<CR>"] = actions.edit,
+          ["-"] = actions.up,
 
-          ['l']     = actions.edit,
+          ["l"] = actions.edit,
 
-          ['<C-s>'] = actions.split,
-          ['<C-v>'] = actions.vsplit,
-          ['<C-t>'] = actions.tabedit,
+          ["<C-s>"] = actions.split,
+          ["<C-v>"] = actions.vsplit,
+          ["<C-t>"] = actions.tabedit,
 
-          ['h']     = actions.up,
-          ['q']     = actions.quit,
+          ["h"] = actions.up,
+          ["q"] = actions.quit,
 
-          ['K']     = actions.mkdir,
-          ['N']     = actions.newfile,
-          ['R']     = actions.rename,
-          ['@']     = actions.cd,
-          ['Y']     = actions.yank_path,
-          ['.']     = actions.toggle_show_hidden,
-          ['D']     = actions.delete,
+          ["K"] = actions.mkdir,
+          ["N"] = actions.newfile,
+          ["R"] = actions.rename,
+          ["@"] = actions.cd,
+          ["Y"] = actions.yank_path,
+          ["."] = actions.toggle_show_hidden,
+          ["D"] = actions.delete,
 
-          ['J'] = function()
+          ["J"] = function()
             mark_actions.toggle_mark()
-            vim.cmd('normal! j')
+            vim.cmd("normal! j")
           end,
-          ['C'] = clipboard_actions.copy,
-          ['X'] = clipboard_actions.cut,
-          ['P'] = clipboard_actions.paste,
+          ["C"] = clipboard_actions.copy,
+          ["X"] = clipboard_actions.cut,
+          ["P"] = clipboard_actions.paste,
         },
         -- https://github.com/justinmk/vim-dirvish/issues/213
         -- float = { winblend = 0 }, -- keep float setting even if you don't use it, otherwise it will crash
@@ -319,7 +319,7 @@ return {
           winblend = 0,
           curdir_window = {
             enable = false,
-            highlight_dirname = false
+            highlight_dirname = false,
           },
 
           -- -- You can define a function that returns a table to be passed as the third
@@ -338,11 +338,11 @@ return {
           --   }
           -- end,
         },
-        hide_cursor = true
-      }
+        hide_cursor = true,
+      })
 
-      vim.api.nvim_create_autocmd({'FileType'}, {
-        pattern = {"lir"},
+      vim.api.nvim_create_autocmd({ "FileType" }, {
+        pattern = { "lir" },
         callback = function()
           -- use visual mode
           vim.api.nvim_buf_set_keymap(
@@ -352,24 +352,22 @@ return {
             ':<C-u>lua require"lir.mark.actions".toggle_mark("v")<CR>',
             { noremap = true, silent = true }
           )
-        
+
           -- echo cwd
           vim.api.nvim_echo({ { vim.fn.expand("%:p"), "Normal" } }, false, {})
-        end
+        end,
       })
 
       -- custom folder icon
-      require'nvim-web-devicons'.set_icon({
+      require("nvim-web-devicons").set_icon({
         lir_folder_icon = {
           icon = "",
           color = "#7ebae4",
-          name = "LirFolderNode"
-        }
+          name = "LirFolderNode",
+        },
       })
-
-    end
+    end,
   },
 
   -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 }
-

@@ -16,7 +16,7 @@ return {
       -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
       -- https://github.com/echasnovski/mini.nvim/blob/main/doc/mini-ai.txt
       --  :h MiniAi-textobject-builtin
-      require('mini.ai').setup()
+      require("mini.ai").setup()
     end,
   },
 }
