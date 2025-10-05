@@ -62,7 +62,6 @@ return {
     ---@type TSConfig
     ---@diagnostic disable-next-line: missing-fields
 
-
     -- require'nvim-treesitter.configs'.setup { }
     opts = {
       -- A list of parser names, or "all" (the listed parsers MUST always be installed)
@@ -165,4 +164,3 @@ return {
     end,
   },
 }
-
