@@ -59,7 +59,12 @@ lib = MR_EXCLUSIVE_TAGS=vim_active
 # ".mrconfig" file in $(pwd), but we'll still check). Then
 # resolve its path if a symlink, and we've found the config.
 #
-# - HSTRY/2025-01-30: MR_SECTION_CONFIG new to OMR `mr` fork.
+# - SAVVY: MR_SECTION_CONFIG is path to file that loaded this
+#   file (via `chain = true`), e.g., ~/.kit/nvim/.mrconfig,
+#   which is a symlink to the actual project file, e.g.,
+#     ~/.kit/nvim/nvim-depoxy/mrconfig/_mrconfig
+#   - HSTRY/2025-01-30: MR_SECTION_CONFIG new to OMR `mr` fork,
+#     i.e., this is not supported by upstream `myrepos`.
 #
 # - USAGE: All _mrconfig-* files in the mrconfig/ subdirectory
 #          are automatically loaded.
