@@ -84,8 +84,11 @@ include =
       return 1
     fi
     #
+    # SAVVY: Sort the results, so the load order in consistent.
+    # - This also lets user override our config by naming a private
+    #   file so it comes after our config, then amending [section]'s.
     local mrconfig=""
-    for mrconfig in $(find "${mrconfigs}" -name "_mrconfig-*"); do
+    for mrconfig in $(find "${mrconfigs}" -name "_mrconfig-*" | sort); do
       # SAVVY: The project config can use either absolute paths to each
       # project, or the config can use a path relative to this file's
       # parent directory (because of how myrepos `chain = true` works).
