@@ -204,7 +204,7 @@ function obj:profile(profile)
     ["dubs_quickfix_wrap"] = batch_02,
     ["dubs_style_guard"] = batch_02,
     ["dubs_toggle_textwrap"] = batch_02, -- XXX of 3
-    -- Use <CR> to :copen matches
+    -- Use <CR> to :copen matches.
     ["QFEnter"] = batch_03,
     ["vim-async-map"] = minimal or bad_batch or async_map,
     -- More & colorful external file change messages; concise conflicts prompt.
@@ -215,17 +215,17 @@ function obj:profile(profile)
     ["vim-buffer-ring"] = batch_02,
     -- ISOFF/2025-02-11: Deprecated. Too kludgy; & a waste of time to maintain.
     ["vim-command-line-clock"] = always_lazy,
-    -- Not compatible with nvim/Neovide because :winpos
+    -- Not compatible with Neovide because :winpo not implemented.
     ["vim-fullscreen-toggle"] = always_lazy,
     -- gf|gF commands that work on ${BASH:-y} vars.
     ["vim-goto-file-sh"] = batch_03,
-    -- lcd to project root for each file (vs. using dir you launced nvim from)
+    -- lcd to project root for each file (vs. using dir you launced nvim from).
     ["vim-lcd-project-root"] = batch_05,
     -- Unnecessary because spellfile.txt... but also more is better? Ok, nope.
     ["vim-mkspell-when-stale"] = always_lazy,
     ["vim-netrw-cfg-split-explorer"] = file_and_netrw,
     ["vim-netrw-explore-map"] = file_and_netrw,
-    -- Open :netrw paths at their canonical path (e.g., not symlink path)
+    -- Open :netrw paths at their canonical path (e.g., not symlink path).
     ["vim-netrw-link-resolve"] = file_and_netrw,
     -- vim-async-map kj/jk (but not gf 3t) | MAYBE: Move to vim-depoxy/init.lua
     ["vim-ovm-easyescape-kj-jk"] = async_map,
