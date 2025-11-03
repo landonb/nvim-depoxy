@@ -59,7 +59,7 @@ vim.env.VIM_EDIT_JUICE_EXIT_ON_SAVE = 1
 -- ~/.config/nvim/lua/config/lazy.lua
 -- ~/.config/nvim/lua/config/profile.lua
 
-require("config.lazy"):setup({ profile = "minimal" })
+require("config.lazy").setup({ profile = "minimal" })
 
 -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #
 -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #
