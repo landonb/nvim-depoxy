@@ -20,6 +20,7 @@ local obj = {}
 
 ---@param profile? string
 -- profile = "maximal", ---@type "minimal" | "midimal" | "maximal"
+-- - REFER: See DepoXy NVD_PROFILE usage.
 function obj:profile(profile)
   -- print("obj:profile: profile: " .. profile)
   local minimal = profile == "minimal"

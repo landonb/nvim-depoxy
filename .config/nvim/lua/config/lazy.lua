@@ -183,6 +183,7 @@ function M.setup(opts)
   local options = vim.tbl_deep_extend("force", M.defaults, opts or {})
   -- print("options.profile: " .. options.profile)
 
+  -- - REFER: See DepoXy NVD_PROFILE usage.
   lazy_profile = require("config.profile"):profile(options.profile)
 
   M.lazy_setup()
