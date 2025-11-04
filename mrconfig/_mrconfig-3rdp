@@ -236,10 +236,12 @@ lib = remote_set starter https://github.com/folke/which-key.nvim.git
 
 # FIXME: *** LazyVim plugin forks ***
 
-# HSTRY/2025-10-05: Fudge, not you, too, LazyVim!
-# - tree-sitter plugin was massively refactored, and dropped `opts.disable`
-#   support, and LazyVim didn't adapt to continue to support disablement.
-# - FIXME: Submit PR.
+# FIXED/2025-11-04: I forked because tree-sitter regression.
+# - But this issue has since been fixed upstream (thanks, @folke!).
+# - HSTRY/2025-10-05: tree-sitter plugin was massively refactored,
+#   and dropped `opts.disable` support, breaking LazyVim (for the
+#   month of October).
+# - SAVVY: So author's fork is no longer necessary...
 [${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/LazyVim]
 order = 379
 lib =
