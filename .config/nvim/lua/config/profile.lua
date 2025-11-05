@@ -42,8 +42,6 @@ function obj:profile(profile)
   -- - But a few of 'em maybe I might someday.
   local batch_06 = not disabled
 
-  -- WTF__/2025-02-14 20:11: Perf drag again!
-  --batch_05 = not disabled and false
   batch_06 = not disabled and false
 
   local batch_07 = not disabled
@@ -63,15 +61,9 @@ function obj:profile(profile)
 
   local javascript_typescript = not disabled
 
-  local nvim_cmps = not disabled and false -- FIXME: AUDIT
+  local nvim_cmps = not disabled and false
 
   local reSTery = not disabled
-  -- FIXME: If I `fs somefile`, then <Cmd-E>, then <Ctrl-End>:
-  -- - Without dubs_ftype_mess, it's instantaneous.
-  -- - With dubs_ftype_mess, it hangs for a sec or two.
-  -- MAYBE: Load only the `rstLiteralBlock` match, and see
-  --        if that's slow... (that's what lets me avoid
-  --        using blank line after `::` code block leaders)
   local reSTery_dubs_ftype_mess = batch_03
 
   -- So that your Hammerspoon accelerators find the correct instance.
@@ -82,7 +74,7 @@ function obj:profile(profile)
 
   local always_lazy = false
 
-  local remove_me = false -- FIXME: These can be retired.
+  local remove_me = false
 
   -- ***
 
