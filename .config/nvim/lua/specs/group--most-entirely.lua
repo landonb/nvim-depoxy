@@ -1120,19 +1120,49 @@ return {
   {
     dir = "~/.kit/nvim/embrace-vim/start/vim-webopen",
     lazy = not lazy_profile["vim-webopen"],
+    -- COPYD: From nvim-lazyb (author's LazyVim-based config (I only
+    -- used nvim-depoxy for fast-startup EDITOR)):
+    --   ~/.kit/nvim/landonb/nvim-lazyb/lua/plugins/embrace-vim.lua
+    config = function()
+      -- If you'd like each URL to open in a new browser tab in an
+      -- existing window instead of always opening in a new window,
+      -- set g:vim_webopen_use_tab nonzero:
+      --
+      --   let g:vim_webopen_use_tab = 1
+      --
+      -- If you'd like Chrome to use most recent user profile, and
+      -- not 'Default', set g:vim_webopen_mru_profile nonzero:
+      --
+      --   let g:vim_webopen_mru_profile = 1
+      vim.g.vim_webopen_maps = {
+        open = {
+          nmap = { "<LocalLeader>U", "gW" },
+          imap = "<LocalLeader>U",
+          vmap = "<LocalLeader>U",
+        },
+        define = "<LocalLeader>D",
+        search = "<LocalLeader>W",
+        incognito = { nmap = "g!" },
+        github = "<LocalLeader>og",
+        thesaurus = "<LocalLeader>T",
+      }
+      -- CXREF:
+      -- ~/.kit/nvim/embrace-vim/start/vim-webopen/autoload/embrace/webopen.vim
+      vim.fn["embrace#webopen#CreateMaps"]()
 
-    -- FIXME/2025-01-31: Absorb vim-depoxy/plugin/ config.
-    -- - Following copied from flash.nvim, which seems
-    --   like good pattern to follow.
-    --
-    --   -- stylua: ignore
-    --   keys = {
-    --     { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-    --     { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    --     { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    --     { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-    --     { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-    --   },
+      local wk = require("which-key")
+      wk.add({
+        mode = { "n", "i", "v" },
+        icon = "󰖟",
+        { "<LocalLeader>U" },
+        { mode = { "n" }, "gW" },
+        { "<LocalLeader>D" },
+        { "<LocalLeader>W" },
+        { mode = { "n" }, "g!" },
+        { "<LocalLeader>og" },
+        { "<LocalLeader>T" },
+      })
+    end,
   },
 
   -- ------------------------------------------------------------
