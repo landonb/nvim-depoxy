@@ -24,8 +24,15 @@ local obj = {}
 function obj:profile(profile)
   -- print("obj:profile: profile: " .. profile)
   local minimal = profile == "minimal"
-  local midimal = profile == "midimal"
-  local maximal = profile == "maximal"
+  -- ISOFF/2025-11-04: Author has since migrated to nvim-lazyb,
+  -- which derives from LazyVim, and uses most of the plugins
+  -- listed below.
+  -- - I only use nvim-depoxy for a quick EDITOR editor (e.g.,
+  --   for writing commit messages).
+  -- - Eventually I may clean up this file, and remove the profile
+  --   cruft... but for now just ignore it all, and use 'minimal'.
+  --  local midimal = profile == "midimal"
+  --  local maximal = profile == "maximal"
 
   local disabled = not profile or profile == "" or profile == "none"
 
