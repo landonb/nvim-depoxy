@@ -236,19 +236,20 @@ lib = remote_set starter https://github.com/folke/which-key.nvim.git
 
 # FIXME: *** LazyVim plugin forks ***
 
-# FIXED/2025-11-04: I forked because tree-sitter regression.
+# ISOFF/2025-11-04: I forked because tree-sitter regression.
 # - But this issue has since been fixed upstream (thanks, @folke!).
 # - HSTRY/2025-10-05: tree-sitter plugin was massively refactored,
 #   and dropped `opts.disable` support, breaking LazyVim (for the
 #   month of October).
 # - SAVVY: So author's fork is no longer necessary...
-[${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/LazyVim]
-order = 379
-lib =
-  remote_set publish https://github.com/landonb/LazyVim.git
-  remote_set starter https://github.com/LazyVim/LazyVim.git
-  # For lazy.nvim (I assume):
-  MR_GITHUB_HOST_ORIGIN=https://github.com/ remote_set origin https://github.com/LazyVim/LazyVim.git
+#
+# [${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/LazyVim]
+# order = 379
+# lib =
+#   remote_set publish https://github.com/landonb/LazyVim.git
+#   remote_set starter https://github.com/LazyVim/LazyVim.git
+#   # For lazy.nvim (I assume):
+#   MR_GITHUB_HOST_ORIGIN=https://github.com/ remote_set origin https://github.com/LazyVim/LazyVim.git
 
 # FIXME/2025-03-15: Has PR'able tweak you should submit.
 [${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/lualine.nvim]
