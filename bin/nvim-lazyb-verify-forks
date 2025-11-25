@@ -1,0 +1,64 @@
+#!/bin/sh
+# vim:tw=0:ts=2:sw=2:et:norl:nospell:ft=bash
+# Author: Landon Bouma <https://tallybark.com/>
+# Project: https://github.com/DepoXy/nvim-depoxy#🐇
+# License: MIT
+
+# Copyright © 2025 Landon Bouma. All Rights Reserved.
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# CXREF: For forks managed by OMR:
+# ~/.kit/nvim/nvim-depoxy/mrconfig/_mrconfig-3rdp @ 237
+
+# Run after LazyVim/lazy.nvim update.
+nvim_lazyb_verify_forks() {
+  local suc=true
+
+  for subdir in \
+    lualine.nvim \
+    noice.nvim \
+    snacks.nvim \
+    which-key.nvim; do
+
+    cd "${HOME}/.local/share/nvim_lazyb/lazy/${subdir}"
+
+    if test "$(git_branch_name)" != "liminal"; then
+      >&2 echo "ERROR: Branch not 'liminal': ${subdir}"
+
+      suc=false
+    elif test "$(git merge-base $(git up) HEAD)" != "$(git rev-parse $(git up))"; then
+      >&2 echo "ERROR: merge-base not upstream: ${subdir}"
+
+      suc=false
+    fi
+  done
+
+  ${suc}
+}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #
+
+source_deps() {
+  . "${SHOILERPLATE:-${HOME}/.kit/sh}/sh-git-nubs/lib/git-nubs.sh"
+}
+
+# +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #
+
+PROG_NAME="nvim-lazyb-verify-forks"
+
+main() {
+  set -e
+
+  source_deps
+
+  nvim_lazyb_verify_forks
+}
+
+if [ "$(basename -- "$(realpath -- "$0")")" != "${PROG_NAME}" ]; then
+  # Being sourced.
+  unset -f main
+else
+  # Run the command when not being sourced.
+  main "$@"
+fi

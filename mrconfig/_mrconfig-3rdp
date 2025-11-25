@@ -251,6 +251,20 @@ lib = remote_set starter https://github.com/folke/which-key.nvim.git
 #   # For lazy.nvim (I assume):
 #   MR_GITHUB_HOST_ORIGIN=https://github.com/ remote_set origin https://github.com/LazyVim/LazyVim.git
 
+# CXREF: Little script to verify branches after lazy.nvim:
+#   ~/.depoxy/ambers/bin/nvim-lazyb-verify-forks
+# - BUGGN: Lazy Update doesn't always restore 'liminal' branch,
+#   like it normally does...
+# - MAYBE: Add Lazy Update hook to verify automatically.
+# - MAYBE: This OMR config manages a specific top-level plugin dir, e.g.,
+#   ~/.kit/nvim/, whereas these (4) LazyVim plugin forks are co-managed by
+#   the OMR config herein, as well as lazy.nvim, using the NVIM_APPNAME-
+#   specific XDG location, e.g., ~/.local/share/nvim_lazyb/lazy/, which
+#   itself is determined by author's dotfiles-esque DepoXy project.
+#   - So maybe move this to a DepoXy project OMR config, not quite sure...
+#     though this project (nvim-depoxy) unlikely to be deployed
+#     independently of DepoXy, so maybe the issue is moot.
+
 # FIXME/2025-03-15: Has PR'able tweak you should submit.
 [${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/lualine.nvim]
 order = 379
