@@ -242,6 +242,7 @@ vim-easymotion/
 /nanotech/opt/jellybeans.vim/
 /neovide/neovide/
 /neovim/neovim/
+/neovim/tree-sitter
 /neovim/nvim-lspconfig/
 /numToStr/start/Comment.nvim/
 /nvim-lua/start/plenary.nvim/
