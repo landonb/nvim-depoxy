@@ -47,7 +47,7 @@ return {
     },
     keys = {
       {
-        "<leader>?",
+        "<LocalLeader>?",
         function()
           require("which-key").show({
             global = false,

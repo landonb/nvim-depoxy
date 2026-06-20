@@ -81,7 +81,9 @@ vim.opt.rtp:prepend(lazypath)
 -- But many of the maps defined by nvim-depoxy are
 -- available from Insert mode, which makes backward
 -- slash the obvious choice.
-vim.g.mapleader = "\\"
+-- - CXREF: Same setup as LazyVim:
+--   ~/.local/share/nvim_lazyb/lazy/LazyVim/lua/lazyvim/config/options.lua
+vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim

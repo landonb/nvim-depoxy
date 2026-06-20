@@ -58,8 +58,8 @@ inoremap <CR> <CR><C-g>u
 " CXREF: https://github.com/DepoXy/vim-depoxy#🤙
 "   ~/.kit/nvim/DepoXy/start/vim-depoxy/plugin/save-close-quit-maps.vim
 
-nnoremap <Leader>dQ :wq<CR>
-inoremap <Leader>dQ <C-o>:wq<CR>
+nnoremap <LocalLeader>dQ :wq<CR>
+inoremap <LocalLeader>dQ <C-o>:wq<CR>
 
 " +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #
 " +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #

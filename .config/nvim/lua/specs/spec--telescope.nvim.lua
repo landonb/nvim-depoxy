@@ -250,34 +250,34 @@ return {
         map("n", lhs, rhs, { noremap = true, desc = desc })
       end
 
-      set_keymap("<leader>dft", use_layout(builtin.builtin, "popup_list"), "Telescope Builtins")
+      set_keymap("<LocalLeader>dft", use_layout(builtin.builtin, "popup_list"), "Telescope Builtins")
 
       -- BWARE/2025-02-18: May need { hidden = false, no_ignore = true }
       -- or you might not see a lot of files listed...
       --   lua require('telescope.builtin').find_files({cwd = "/Users/puck/.kit/nvim", hidden = true, no_ignore = true})
       --   Telescope find_files cwd=/Users/puck/.kit/nvim hidden=true no_ignore=true
-      set_keymap("<leader>dfo", use_layout(builtin.find_files, "popup_list"), "Telescope Find Files")
+      set_keymap("<LocalLeader>dfo", use_layout(builtin.find_files, "popup_list"), "Telescope Find Files")
       -- Another example:
-      set_keymap("<leader>dfO", function()
+      set_keymap("<LocalLeader>dfO", function()
         require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root })
       end, "Find Plugin File")
 
-      set_keymap("<leader>dfb", use_layout(builtin.buffers, "popup_extended"), "Telescope Buffers")
-      set_keymap("<leader>dfc", use_layout(builtin.commands, "command_pane"), "Telescope Commands")
-      set_keymap("<leader>dfg", use_layout(builtin.git_status, "popup_extended"), "Telescope Git Status")
-      set_keymap("<leader>dfq", use_layout(builtin.quickfix, "ivy_plus"), "Telescope Quickfix")
-      set_keymap("<leader>dfl", use_layout(builtin.loclist, "ivy_plus"), "Telescope Loc list")
+      set_keymap("<LocalLeader>dfb", use_layout(builtin.buffers, "popup_extended"), "Telescope Buffers")
+      set_keymap("<LocalLeader>dfc", use_layout(builtin.commands, "command_pane"), "Telescope Commands")
+      set_keymap("<LocalLeader>dfg", use_layout(builtin.git_status, "popup_extended"), "Telescope Git Status")
+      set_keymap("<LocalLeader>dfq", use_layout(builtin.quickfix, "ivy_plus"), "Telescope Quickfix")
+      set_keymap("<LocalLeader>dfl", use_layout(builtin.loclist, "ivy_plus"), "Telescope Loc list")
       -- set_keymap(
       --   '<F1>',
       --   use_layout(builtin.help_tags, 'popup_extended'),
       --   "Telescope Builtins"
       -- )
-      set_keymap("<leader>dfh", use_layout(builtin.help_tags, "popup_extended"), "Telescope Help tags")
+      set_keymap("<LocalLeader>dfh", use_layout(builtin.help_tags, "popup_extended"), "Telescope Help tags")
 
-      -- vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
-      -- vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
-      -- vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
-      -- vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
+      -- vim.keymap.set("n", "<LocalLeader>ff", builtin.find_files, { desc = "Telescope find files" })
+      -- vim.keymap.set("n", "<LocalLeader>fg", builtin.live_grep, { desc = "Telescope live grep" })
+      -- vim.keymap.set("n", "<LocalLeader>fb", builtin.buffers, { desc = "Telescope buffers" })
+      -- vim.keymap.set("n", "<LocalLeader>fh", builtin.help_tags, { desc = "Telescope help tags" })
       -- GROUP: #vim_buffer_picker
       -- CALSO:
       --   :Buffers (junegunn/FZF)
@@ -292,7 +292,7 @@ return {
       local builtin = require("telescope.builtin")
 
       set_keymap(
-        "<leader>dff",
+        "<LocalLeader>dff",
         -- use_layout(require('telescope').extensions.live_grep_args.live_grep_args, 'popup_extended')
         use_layout(builtin.live_grep, "popup_extended")
       )

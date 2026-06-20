@@ -36,7 +36,7 @@ return {
     keys = {
       -- Open git log in vertical view
       {
-        "<leader>gl",
+        "<LocalLeader>gl",
         function()
           Snacks.picker.git_log({
             finder = "git_log",
@@ -52,7 +52,7 @@ return {
       {
         -- -- You can confirm in your teminal lamw26wmal with:
         -- -- rg "^\s*-\s\[ \]" test-markdown.md
-        "<leader>tt",
+        "<LocalLeader>tt",
         function()
           Snacks.picker.grep({
             prompt = " ",
@@ -81,7 +81,7 @@ return {
       },
       -- -- Iterate throuth completed tasks in Snacks_picker lamw26wmal
       {
-        "<leader>tc",
+        "<LocalLeader>tc",
         function()
           Snacks.picker.grep({
             prompt = " ",
@@ -119,7 +119,7 @@ return {
         desc = "Branches",
       },
       -- Used in LazyVim to view the different keymaps, this by default is
-      -- configured as <leader>sk but I run it too often
+      -- configured as <LocalLeader>sk but I run it too often
       -- Sometimes I need to see if a keymap is already taken or not
       {
         "<M-k>",
@@ -132,7 +132,7 @@ return {
       },
       -- File picker
       {
-        "<leader><space>",
+        "<LocalLeader><space>",
         function()
           Snacks.picker.files({
             finder = "files",

@@ -787,15 +787,15 @@ return {
     end,
 
     keys = {
-      { "<leader>d1", mode = { "n", "i" }, "<cmd>1wincmd w<CR>", desc = "Window #1 jumper" },
-      { "<leader>d2", mode = { "n", "i" }, "<cmd>2wincmd w<CR>", desc = "Window #2 jumper" },
-      { "<leader>d3", mode = { "n", "i" }, "<cmd>3wincmd w<CR>", desc = "Window #3 jumper" },
-      { "<leader>d4", mode = { "n", "i" }, "<cmd>4wincmd w<CR>", desc = "Window #4 jumper" },
-      { "<leader>d5", mode = { "n", "i" }, "<cmd>5wincmd w<CR>", desc = "Window #5 jumper" },
-      { "<leader>d6", mode = { "n", "i" }, "<cmd>6wincmd w<CR>", desc = "Window #6 jumper" },
-      { "<leader>d7", mode = { "n", "i" }, "<cmd>7wincmd w<CR>", desc = "Window #7 jumper" },
-      { "<leader>d8", mode = { "n", "i" }, "<cmd>8wincmd w<CR>", desc = "Window #8 jumper" },
-      { "<leader>d9", mode = { "n", "i" }, "<cmd>9wincmd w<CR>", desc = "Window #9 jumper" },
+      { "<LocalLeader>d1", mode = { "n", "i" }, "<cmd>1wincmd w<CR>", desc = "Window #1 jumper" },
+      { "<LocalLeader>d2", mode = { "n", "i" }, "<cmd>2wincmd w<CR>", desc = "Window #2 jumper" },
+      { "<LocalLeader>d3", mode = { "n", "i" }, "<cmd>3wincmd w<CR>", desc = "Window #3 jumper" },
+      { "<LocalLeader>d4", mode = { "n", "i" }, "<cmd>4wincmd w<CR>", desc = "Window #4 jumper" },
+      { "<LocalLeader>d5", mode = { "n", "i" }, "<cmd>5wincmd w<CR>", desc = "Window #5 jumper" },
+      { "<LocalLeader>d6", mode = { "n", "i" }, "<cmd>6wincmd w<CR>", desc = "Window #6 jumper" },
+      { "<LocalLeader>d7", mode = { "n", "i" }, "<cmd>7wincmd w<CR>", desc = "Window #7 jumper" },
+      { "<LocalLeader>d8", mode = { "n", "i" }, "<cmd>8wincmd w<CR>", desc = "Window #8 jumper" },
+      { "<LocalLeader>d9", mode = { "n", "i" }, "<cmd>9wincmd w<CR>", desc = "Window #9 jumper" },
     },
   },
 
@@ -816,29 +816,29 @@ return {
     -- - BWARE: Sends output directly to messages, so user won't see it
     --   unless they run :messages
     --
-    --     lua vim.keymap.set("n", "<Leader>db", function()
+    --     lua vim.keymap.set("n", "<LocalLeader>db", function()
     --       vim.api.nvim_call_function("g:embrace#bufsurf#BufferRingListAll", {})
     --     end, { silent = false })
     --
     -- - BWARE: Quietly prints to messages; you won't see anything unless `:messages`:
     --
-    --     lua vim.keymap.set("n", "<Leader>db", function() print("foo\nbar\nbaz\n") end, { silent = false })
+    --     lua vim.keymap.set("n", "<LocalLeader>db", function() print("foo\nbar\nbaz\n") end, { silent = false })
     --
     -- - WORKS: Calling `nvim_set_keymap` directory works (albeit the Lua
     --   string you pass it is less Lua-like than using a function () end.
     --
-    --     lua vim.api.nvim_set_keymap("n", "<leader>db",
+    --     lua vim.api.nvim_set_keymap("n", "<LocalLeader>db",
     --       '<cmd>lua vim.api.nvim_call_function("g:embrace#bufsurf#BufferRingListAll", {})<CR>', {})
     --
     -- - WORKS: You can also thunk back to classic Vim, e.g., this also works:
     --
-    --    lua vim.cmd('nnoremap <silent> <leader>db :call g:embrace#bufsurf#BufferRingListAll()<CR>')
+    --    lua vim.cmd('nnoremap <silent> <LocalLeader>db :call g:embrace#bufsurf#BufferRingListAll()<CR>')
     --
     -- - WRKLG/2025-02-05: Ugh, for posterity:
     --
     --     keys__WRONG = {
     --       {
-    --         "<leader>db", mode = { "n", "i" }, function()
+    --         "<LocalLeader>db", mode = { "n", "i" }, function()
     --           -- DUNNO/2025-02-05: This all prints silently to :messages.
     --           local foo = vim.api.nvim_call_function("g:embrace#bufsurf#BufferRingListAll", {})
     --           print('foo/1: ' .. vim.inspect(foo))
@@ -859,12 +859,12 @@ return {
     --     },
     --
     --     config__WORKS = function()
-    --       vim.cmd('nnoremap <silent> <leader>db :call g:embrace#bufsurf#BufferRingListAll()<CR>')
-    --       vim.cmd('inoremap <silent> <leader>db :<C-O>call g:embrace#bufsurf#BufferRingListAll()<CR>')
+    --       vim.cmd('nnoremap <silent> <LocalLeader>db :call g:embrace#bufsurf#BufferRingListAll()<CR>')
+    --       vim.cmd('inoremap <silent> <LocalLeader>db :<C-O>call g:embrace#bufsurf#BufferRingListAll()<CR>')
     --     end,
     keys = {
       {
-        "<leader>db",
+        "<LocalLeader>db",
         mode = { "n", "i" },
         -- SPIKE/2025-02-05: Why does using closure inhibit user seeing
         -- messages and needing to acknowledge &more prompt? E.g., this:

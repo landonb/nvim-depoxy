@@ -33,24 +33,24 @@ return {
     set({ "n", "x" }, "<down>", function()
       mc.lineAddCursor(1)
     end)
-    set({ "n", "x" }, "<leader><up>", function()
+    set({ "n", "x" }, "<LocalLeader><up>", function()
       mc.lineSkipCursor(-1)
     end)
-    set({ "n", "x" }, "<leader><down>", function()
+    set({ "n", "x" }, "<LocalLeader><down>", function()
       mc.lineSkipCursor(1)
     end)
 
     -- Add or skip adding a new cursor by matching word/selection
-    set({ "n", "x" }, "<leader>n", function()
+    set({ "n", "x" }, "<LocalLeader>n", function()
       mc.matchAddCursor(1)
     end)
-    set({ "n", "x" }, "<leader>s", function()
+    set({ "n", "x" }, "<LocalLeader>s", function()
       mc.matchSkipCursor(1)
     end)
-    set({ "n", "x" }, "<leader>N", function()
+    set({ "n", "x" }, "<LocalLeader>N", function()
       mc.matchAddCursor(-1)
     end)
-    set({ "n", "x" }, "<leader>S", function()
+    set({ "n", "x" }, "<LocalLeader>S", function()
       mc.matchSkipCursor(-1)
     end)
 
@@ -68,13 +68,13 @@ return {
     set("n", "mW", mc.operator)
 
     -- Add all matches in the document
-    set({ "n", "x" }, "<leader>A", mc.matchAllAddCursors)
+    set({ "n", "x" }, "<LocalLeader>A", mc.matchAllAddCursors)
 
     -- You can also add cursors with any motion you prefer:
     -- set("n", "<right>", function()
     --   mc.addCursor("w")
     -- end)
-    -- set("n", "<leader><right>", function()
+    -- set("n", "<LocalLeader><right>", function()
     --   mc.skipCursor("w")
     -- end)
 
@@ -83,7 +83,7 @@ return {
     set({ "n", "x" }, "<right>", mc.prevCursor)
 
     -- Delete the main cursor.
-    set({ "n", "x" }, "<leader>x", mc.deleteCursor)
+    set({ "n", "x" }, "<LocalLeader>x", mc.deleteCursor)
 
     -- Add and remove cursors with control + left click.
     set("n", "<c-leftmouse>", mc.handleMouse)
@@ -94,7 +94,7 @@ return {
     set({ "n", "x" }, "<c-q>", mc.toggleCursor)
 
     -- Clone every cursor and disable the originals.
-    set({ "n", "x" }, "<leader><c-q>", mc.duplicateCursors)
+    set({ "n", "x" }, "<LocalLeader><c-q>", mc.duplicateCursors)
 
     set("n", "<esc>", function()
       if not mc.cursorsEnabled() then
@@ -107,10 +107,10 @@ return {
     end)
 
     -- bring back cursors if you accidentally clear them
-    set("n", "<leader>gv", mc.restoreCursors)
+    set("n", "<LocalLeader>gv", mc.restoreCursors)
 
     -- Align cursor columns.
-    set("n", "<leader>a", mc.alignCursors)
+    set("n", "<LocalLeader>a", mc.alignCursors)
 
     -- Split visual selections by regex.
     set("x", "S", mc.splitCursors)
@@ -123,10 +123,10 @@ return {
     set("x", "M", mc.matchCursors)
 
     -- Rotate visual selection contents.
-    set("x", "<leader>t", function()
+    set("x", "<LocalLeader>t", function()
       mc.transposeCursors(1)
     end)
-    set("x", "<leader>T", function()
+    set("x", "<LocalLeader>T", function()
       mc.transposeCursors(-1)
     end)
 

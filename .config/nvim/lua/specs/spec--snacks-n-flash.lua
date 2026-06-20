@@ -62,7 +62,7 @@ return {
     },
     keys = {
       {
-        "<leader>b",
+        "<LocalLeader>b",
         function()
           Snacks.picker.buffers({
             on_show = function(picker)
