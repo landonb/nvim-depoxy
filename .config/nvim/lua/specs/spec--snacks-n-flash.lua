@@ -8,11 +8,13 @@
 
 -- BEGET:
 -- https://www.reddit.com/r/neovim/comments/1ifyfou/comment/malwcwo/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
--- 
+--
 -- https://www.reddit.com/r/neovim/comments/1ifyfou/why_im_moving_from_telescope_to_snacks_picker_why/
 
 -- FIXME/2025-02-23: Demo this
-if true then return {} end
+if true then
+  return {}
+end
 
 -- FIXME/2025-02-23: Demo the smart picker, should be *frecency*-esque.
 --  snacks.picker.smart
@@ -78,4 +80,3 @@ return {
     },
   },
 }
-

@@ -11,7 +11,9 @@
 -- https://github.com/linkarzu/dotfiles-latest/blob/main/neovim/neobean/lua/plugins/snacks.lua
 
 -- FIXME/2025-02-23: Demo this
-if true then return {} end
+if true then
+  return {}
+end
 
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
@@ -369,4 +371,3 @@ return {
     },
   },
 }
-
