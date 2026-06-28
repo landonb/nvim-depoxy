@@ -37,6 +37,7 @@ nvim_lazyb_verify_forks() {
   local suc=true
 
   for subdir in \
+    LazyVim \
     lualine.nvim \
     noice.nvim \
     snacks.nvim \
