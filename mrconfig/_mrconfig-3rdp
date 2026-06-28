@@ -271,6 +271,16 @@ lib = remote_set starter https://github.com/folke/which-key.nvim.git
 #      'private' branch exist, or if only ssh remotes (no github.com, etc.).
 # ~/.depoxy/ambers/home/.kit/git/ohmyrepos/lib/infuse-personal-projlns.sh
 
+# ADDED/2026-06-28: So that infuseProjlns puts this on search.
+[${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/LazyVim]
+order = 379
+lib =
+  remote_set publish https://github.com/landonb/LazyVim.git
+  remote_set starter https://github.com/folke/LazyVim.git
+  # For lazy.nvim:
+  MR_GITHUB_HOST_ORIGIN=https://github.com/ \
+    remote_set origin https://github.com/folke/LazyVim.git
+
 # FIXME/2025-03-15: Has PR'able tweak you should submit.
 [${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/lualine.nvim]
 order = 379

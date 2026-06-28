@@ -409,10 +409,13 @@ autocommit =
   #
   git_auto_commit_one "lazy-lock.json" -m "chore(aci): update lazy-lock.json"
 
-# This is a folke project (19.1k stars)
-# GROUP: #nvim_configs
-[LazyVim/LazyVim]
-lib = remote_set starter https://github.com/LazyVim/LazyVim.git
+# MOVED/2026-06-28:
+# ~/.kit/nvim/nvim-depoxy/mrconfig/_mrconfig-3rdp
+#
+#   # This is a folke project (19.1k stars)
+#   # GROUP: #nvim_configs
+#   [LazyVim/LazyVim]
+#   lib = remote_set starter https://github.com/LazyVim/LazyVim.git
 
 # For testing vanilla LazyVim.
 [LazyVim/starter]

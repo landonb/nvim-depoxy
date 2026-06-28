@@ -230,7 +230,7 @@ vim-easymotion/
 /junegunn/start/vim-plug/
 /justinmk/start/vim-dirvish/
 /justinmk/start/vim-sneak/
-/LazyVim/LazyVim/
+# /LazyVim/LazyVim -> /private/user/.local/share/nvim_lazyb/lazy/LazyVim/
 /LazyVim/starter/
 /leafgarland/opt/typescript-vim/
 /luukvbaal/start/nnn.nvim/
