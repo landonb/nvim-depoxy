@@ -265,6 +265,12 @@ lib = remote_set starter https://github.com/folke/which-key.nvim.git
 #     though this project (nvim-depoxy) unlikely to be deployed
 #     independently of DepoXy, so maybe the issue is moot.
 
+# REFER: ~/.projlns created via default infuseProjlns callback:
+#   infuse_projlns_if_personal_project
+#   -> checks is_personal_project: Checks if either 'publish/release' or
+#      'private' branch exist, or if only ssh remotes (no github.com, etc.).
+# ~/.depoxy/ambers/home/.kit/git/ohmyrepos/lib/infuse-personal-projlns.sh
+
 # FIXME/2025-03-15: Has PR'able tweak you should submit.
 [${NVIM_DEPOXY_DATA_HOME:-${XDG_DATA_HOME:-${HOME}/.local/share}/nvim_lazyb/lazy}/lualine.nvim]
 order = 379
