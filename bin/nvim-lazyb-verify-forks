@@ -11,6 +11,27 @@
 # CXREF: For forks managed by OMR:
 # ~/.kit/nvim/nvim-depoxy/mrconfig/_mrconfig-3rdp @ 237
 
+# DEVEL: If lazy.nvim update doesn't seem to work, troubleshoot:
+# - You can force the 'build' function to run using this invocation.
+# - See also the build-fork function, which has log code you can enable:
+#     M.enable_lazy_build_fork_log = true
+#     ...
+#     M.lazy_build_fork = function(proj_dir, upstream)
+#   ~/.kit/nvim/landonb/nvim-lazyb/lua/util/init.lua
+# - Set NVIM_LAZYB_FORCE_UPDATE=true to checkout each fork's
+#   upstream tracking branch, and to pop the latest commit,
+#   so that when you run layz.nvim Update, it'll update
+#   these plugins (otherwise, if there are no upstream
+#   changes, the 'build' callback will not be invoked).
+# - USAGE: Call the following to ensure forks will be
+#   updated; then run Lazy update; then re-run this
+#   script but without that environ set to (silently)
+#   verify okayness.
+__USAGE__="
+  NVIM_LAZYB_FORCE_UPDATE=true \
+    ~/.kit/nvim/nvim-depoxy/bin/nvim-lazyb-verify-forks
+"
+
 # Run after LazyVim/lazy.nvim update.
 nvim_lazyb_verify_forks() {
   local suc=true
@@ -23,7 +44,9 @@ nvim_lazyb_verify_forks() {
 
     cd "${HOME}/.local/share/nvim_lazyb/lazy/${subdir}"
 
-    if test "$(git_branch_name)" != "liminal"; then
+    if ${NVIM_LAZYB_FORCE_UPDATE:-false}; then
+      _lazy_nvim_ensure_will_update
+    elif test "$(git_branch_name)" != "liminal"; then
       >&2 echo "ERROR: Branch not 'liminal': ${subdir}"
 
       suc=false
@@ -35,6 +58,17 @@ nvim_lazyb_verify_forks() {
   done
 
   ${suc}
+}
+
+_lazy_nvim_ensure_will_update() {
+  if ! (git checkout "main" || git checkout "master") >/dev/null 2>&1; then
+    >&2 echo "GAFFE: No 'main' or 'master' branch: $(pwd)"
+
+    exit 1
+  fi
+
+  git reset --hard HEAD~ |
+    sed -E 's/(.{22}).*$/\1.../'
 }
 
 # +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #
