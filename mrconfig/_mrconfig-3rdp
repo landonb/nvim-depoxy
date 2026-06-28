@@ -251,6 +251,11 @@ lib = remote_set starter https://github.com/folke/which-key.nvim.git
 #   # For lazy.nvim (I assume):
 #   MR_GITHUB_HOST_ORIGIN=https://github.com/ remote_set origin https://github.com/LazyVim/LazyVim.git
 
+# CXREF: Each fork registers a 'build' function called on lazy.nvim update.
+# - See:
+#   M.lazy_build_fork = function(proj_dir, upstream)
+# ~/.kit/nvim/landonb/nvim-lazyb/lua/util/init.lua
+
 # CXREF: Little script to verify branches after lazy.nvim:
 #   ~/.depoxy/ambers/bin/nvim-lazyb-verify-forks
 # - BUGGN: Lazy Update doesn't always restore 'liminal' branch,
