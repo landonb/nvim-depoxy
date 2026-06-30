@@ -16,7 +16,8 @@ order = 820
 [hrsh7th/nvim-cmp]
 lib = remote_set starter https://github.com/hrsh7th/nvim-cmp.git
 
-[neovim/nvim-lspconfig]
+# REFER: ~/.kit/nvim/nvim-lspconfig
+[nvim-lspconfig]
 lib = remote_set starter https://github.com/neovim/nvim-lspconfig.git
 
 [hrsh7th/cmp-nvim-lsp]

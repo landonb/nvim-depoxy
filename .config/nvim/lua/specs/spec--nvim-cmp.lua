@@ -130,7 +130,7 @@ return {
 
   {
     -- https://github.com/neovim/nvim-lspconfig
-    dir = "~/.kit/nvim/neovim/nvim-lspconfig",
+    dir = "~/.kit/nvim/nvim-lspconfig",
     lazy = not lazy_profile["nvim-lspconfig"],
   },
 
@@ -141,7 +141,7 @@ return {
 
     dependencies = {
       -- At least I think it is...
-      { dir = "~/.kit/nvim/neovim/nvim-lspconfig" },
+      { dir = "~/.kit/nvim/nvim-lspconfig" },
     },
   },
 
@@ -152,7 +152,7 @@ return {
 
     dependencies = {
       -- At least I think it is...
-      { dir = "~/.kit/nvim/neovim/nvim-lspconfig" },
+      { dir = "~/.kit/nvim/nvim-lspconfig" },
     },
   },
 
@@ -163,7 +163,7 @@ return {
 
     dependencies = {
       -- At least I think it is...
-      { dir = "~/.kit/nvim/neovim/nvim-lspconfig" },
+      { dir = "~/.kit/nvim/nvim-lspconfig" },
     },
   },
 
@@ -174,7 +174,7 @@ return {
 
     dependencies = {
       -- At least I think it is...
-      { dir = "~/.kit/nvim/neovim/nvim-lspconfig" },
+      { dir = "~/.kit/nvim/nvim-lspconfig" },
     },
   },
 }

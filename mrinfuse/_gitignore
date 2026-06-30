@@ -240,11 +240,10 @@ vim-easymotion/
 /ms-jpq/start/chadtree/
 /MunifTanjim/start/nui.nvim/
 /nanotech/opt/jellybeans.vim/
-/neovide/neovide/
-/neovim/neovim/
-/neovim/tree-sitter
-/neovim/nvim-lspconfig/
+/neovide/
+/neovim/
 /numToStr/start/Comment.nvim/
+/nvim-lspconfig/
 /nvim-lua/start/plenary.nvim/
 /nvim-mini/mini.icons/
 /nvim-neo-tree/start/neo-tree.nvim/
@@ -280,6 +279,7 @@ vim-easymotion/
 /tpope/start/vim-repeat/
 /tpope/start/vim-speeddating/
 /tpope/start/vim-vinegar/
+/tree-sitter/
 /tsakirist/telescope-lazy.nvim/
 /vim-scripts/opt/AutoAdapt/
 /vim-scripts/start/BufOnly.vim/
