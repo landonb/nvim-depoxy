@@ -68,7 +68,7 @@ function! g:depoxy#plug_dubs#load() abort
   let g:vim_fullscreen_toggle_create_maps = 1
   Plug '~/.kit/nvim/embrace-vim/start/vim-fullscreen-toggle'
 
-  Plug '~/.kit/nvim/embrace-vim/start/vim-goto-file-sh'
+  Plug '~/.kit/nvim/embrace-vim/start/vim-goto-file-improved'
   Plug '~/.kit/nvim/landonb/vim-lcd-project-root'
   Plug '~/.kit/nvim/landonb/vim-mkspell-when-stale'
   Plug '~/.kit/nvim/landonb/vim-netrw-cfg-split-explorer'

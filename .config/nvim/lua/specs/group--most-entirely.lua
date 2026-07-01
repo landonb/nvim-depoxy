@@ -906,8 +906,8 @@ return {
   },
 
   {
-    dir = "~/.kit/nvim/embrace-vim/start/vim-goto-file-sh",
-    lazy = not lazy_profile["vim-goto-file-sh"],
+    dir = "~/.kit/nvim/embrace-vim/start/vim-goto-file-improved",
+    lazy = not lazy_profile["vim-goto-file-improved"],
   },
 
   {

@@ -218,7 +218,7 @@ function obj:profile(profile)
     -- Not compatible with Neovide because :winpo not implemented.
     ["vim-fullscreen-toggle"] = always_lazy,
     -- gf|gF commands that work on ${BASH:-y} vars.
-    ["vim-goto-file-sh"] = batch_03,
+    ["vim-goto-file-improved"] = batch_03,
     -- lcd to project root for each file (vs. using dir you launced nvim from).
     ["vim-lcd-project-root"] = batch_05,
     -- Unnecessary because spellfile.txt... but also more is better? Ok, nope.
