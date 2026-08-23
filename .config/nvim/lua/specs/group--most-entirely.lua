@@ -1095,6 +1095,8 @@ return {
       vim.fn["embrace#titlebar#Setup"]({
         titlebar_disable = false,
         clock_rate = 2500,
+        titlebar_proportionally_spaced = 0,
+        friendly_name_root = "",
       })
     end,
   },
