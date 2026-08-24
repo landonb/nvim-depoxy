@@ -68,7 +68,10 @@ function obj:profile(profile)
 
   local javascript_typescript = not disabled
 
+  -- HSTRY/2026-08-24: Threatened with a good time but never enabled:
   local nvim_cmps = not disabled and false
+  -- ALTLY/2026-08-24: LazyVim ×ed nvim-cmp → blink.cmp, let's too:
+  local blink_cmp = not disabled
 
   local reSTery = not disabled
   local reSTery_dubs_ftype_mess = batch_03
@@ -323,6 +326,12 @@ function obj:profile(profile)
     ["cmp-buffer"] = nvim_cmps,
     ["cmp-path"] = nvim_cmps,
     ["cmp-cmdline"] = nvim_cmps,
+    --
+    -- Inline path completion/suggestions.
+    -- -- CXREF:
+    --    nvim/nvim-depoxy/.config/nvim/lua/specs/spec--blink.cmp.lua
+    --    nvim/nvim-depoxy/mrconfig/_mrconfig-lsp
+    ["saghen/blink.cmp"] = blink_cmp,
 
     -- CXREF:
     -- ~/.depoxy/ambers/home/.config/nvim/lua/minimal/nvim-treesitter.lua
