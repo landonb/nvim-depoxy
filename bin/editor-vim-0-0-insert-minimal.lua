@@ -35,7 +35,7 @@ require("util.mswin").setup()
 
 -- CXREF: Use another module to customize any Neovide settings:
 --   require('modules.neovide')
--- ~/.kit/nvim/nvim-depoxy/.config/nvim/lua/modules/neovide.lua
+-- nvim/nvim-depoxy/.config/nvim/lua/modules/neovide.lua
 if vim.g.neovide then
   -- Nothing.
 end
@@ -49,15 +49,18 @@ vim.opt.title = true
 
 -- CXREF: See also same comment below:
 -- - <C-s> saves and quits (:wq).
---   ~/.kit/nvim/landonb/dubs_edit_juice/after/plugin/ctrl-s-save-command.vim
+--   nvim/landonb/dubs_edit_juice/after/plugin/ctrl-s-save-command.vim
 vim.env.VIM_EDIT_JUICE_EXIT_ON_SAVE = 1
 
 -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #
 -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #
 
 -- CXREF:
--- ~/.config/nvim/lua/config/lazy.lua
--- ~/.config/nvim/lua/config/profile.lua
+-- ~/.config/nvim_depoxy/lua/config/lazy.lua
+-- ~/.config/nvim_depoxy/lua/config/profile.lua
+-- - Aka:
+--   nvim/nvim-depoxy/.config/nvim/lua/config/lazy.lua
+--   nvim/nvim-depoxy/.config/nvim/lua/config/profile.lua
 
 require("config.lazy").setup({ profile = "minimal" })
 
@@ -79,7 +82,7 @@ require("config.lazy").setup({ profile = "minimal" })
 --
 -- Use the path to this script to find the shared script.
 -- - CXREF:
---   ~/.kit/nvim/nvim-depoxy/bin/editor-vim-0-0-insert-minimal.vim
+--   nvim/nvim-depoxy/bin/editor-vim-0-0-insert-minimal.vim
 vim.cmd("source " .. vim.fn.expand("<script>:h") .. "/editor-vim-0-0-insert-minimal.vim")
 
 -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ #
