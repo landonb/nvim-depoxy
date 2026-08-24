@@ -36,9 +36,10 @@ require("util.mswin").setup()
 -- CXREF: Use another module to customize any Neovide settings:
 --   require('modules.neovide')
 -- nvim/nvim-depoxy/.config/nvim/lua/modules/neovide.lua
-if vim.g.neovide then
-  -- Nothing.
-end
+--
+-- if vim.g.neovide then
+--   -- Nothing.
+-- end
 
 -- FIXME/2025-01-28 14:57: This belongs... somewhere else...
 -- FIXME/2025-02-01 13:20: Does this even matter to terminal vim/nvim?
