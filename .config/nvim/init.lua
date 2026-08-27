@@ -200,7 +200,7 @@ end
 --     ln -sfn ~/.config/nvim_depoxy ~/.kit/nvim/nvim-depoxy/.config/nvim
 --     NVIM_APPNAME=nvim_depoxy nvim ...
 --
---   ~/.depoxy/ambers/core/neovim   .sh
+--   ~/.depoxy/ambers/core/neovimide.sh
 
 -- CXREF:
 -- ~/.kit/nvim/nvim-depoxy/.config/nvim/lua/config/lazy.lua
