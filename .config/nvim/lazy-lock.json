@@ -1,9 +1,9 @@
 {
   "blink.cmp": { "branch": "main", "commit": "d50cfb205c677143d1f036a4749e21c1c8c6bc85" },
   "blink.lib": { "branch": "main", "commit": "c8fdc12c8a2fab6cf786dd7141a283f8079f902b" },
-  "catppuccin": { "branch": "main", "commit": "edefef779ab08ce1a4a404713e3012b0d202bd35" },
-  "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
-  "mini.nvim": { "branch": "main", "commit": "8d86a057fa14681cf7cab74ea7cba894a0abe14f" },
-  "multicursor.nvim": { "branch": "1.0", "commit": "704b99f10a72cc05d370cfeb294ff83412a8ab55" },
+  "catppuccin": { "branch": "main", "commit": "4bb938bbba41d306db18bf0eb0633a5f28fd7ba0" },
+  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "mini.nvim": { "branch": "main", "commit": "f89f4e20dc998d8f0cb8b21734877a64a9adee92" },
+  "multicursor.nvim": { "branch": "1.0", "commit": "86537c3771f1989592568c9d92da2e201297867a" },
   "palenightfall.nvim": { "branch": "main", "commit": "25a1e7d43256834a671174e5d83edb57f7bec1e0" }
 }
