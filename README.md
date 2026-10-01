@@ -61,7 +61,7 @@ manage multiple Neovim instances, versions, and plugin distributions.
 
 [nvim-lazyb]: https://github.com/landonb/nvim-lazyb#🧸
 
-[shell functions]: https://github.com/DepoXy/depoxy/blob/1.18.0/core/neovimide.sh
+[shell functions]: https://github.com/DepoXy/depoxy/blob/1.18.0/core/neovimgui.sh
 
 [gvim-open-kindness]: https://github.com/DepoXy/gvim-open-kindness#🐬
 
