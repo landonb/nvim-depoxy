@@ -719,6 +719,12 @@ return {
     end,
   },
 
+  -- USYNC: Following is a small subset copied from nvim-lazyb:
+  --   nvim/landonb/nvim-lazyb/lua/plugins/project-tray.lua
+  -- - Note that nvim-lazyb wires a lot more than we do here,
+  --   e.g., <Shift-Alt-4> to toggle Project, but nvim-depoxy
+  --   is meant to be used as a single-doc EDITOR (git commit,
+  --   Dob entries, etc.), so wiring the minimum we need.
   {
     dir = "~/.kit/nvim/landonb/dubs_project_tray",
     lazy = not lazy_profile["dubs_project_tray"],
@@ -726,6 +732,34 @@ return {
       -- CXREF:
       -- ~/.kit/nvim/landonb/dubs_project_tray/plugin/dubs_project.vim @ 72
       vim.g.proj_flags = "imstB"
+
+      -- CRUMB: <Shift-Space> (<s-space>) — \ue101 — 
+      if vim.env.TERM == "xterm-kitty" then
+        vim.g.proj_width_toggle_lhs = "\u{E101}"
+      end
+    end,
+
+    config = function()
+      -- CRUMB: <Shift-Space> (<s-space>) — \ue101 — 
+      local shift_space_kludge = {}
+      if vim.env.TERM == "xterm-kitty" then
+        shift_space_kludge = {
+          mode = { "n", "i", "v" },
+          -- BNDNG: <Shift-Space> (PUA for)
+          -- USYNC: #PUA_Kitty: E101 ("")
+          -- - SAVVY: Because Kitty <Shift-Space> enters literal "", change back to space.
+          "\u{E101}",
+          -- In lieu of a function, the replacement character.
+          " ",
+          noremap = true,
+          silent = true,
+          desc = "Convert <Shift-Space> PUA char. back to <Space>",
+        }
+      end
+      local wk = require("which-key")
+      wk.add({
+        shift_space_kludge,
+      })
     end,
   },
 
