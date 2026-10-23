@@ -53,6 +53,8 @@ function obj:profile(profile)
 
   local batch_07 = not disabled
 
+  local batch_08 = not disabled
+
   -- Completely unnecessary plugin(s).
   local batch_99 = not disabled
 
@@ -307,6 +309,8 @@ function obj:profile(profile)
     ["telescope-file-browser.nvim"] = nil,
     -- REFER: https://github.com/nvim-tree/nvim-tree.lua
     ["nvim-tree.lua"] = false,
+
+    ["folke/snacks.lua"] = batch_08,
 
     -- CXREF:
     -- ~/.kit/nvim/nvim-depoxy/.config/nvim/lua/specs/spec--telescope.nvim.lua
