@@ -104,7 +104,21 @@ editor_vim_0_0_insert_minimal() {
 
 # ***
 
+# COPYD: _hf_jit_load_rust
+_ev_source_environm_rustup_cargo() {
+  if [ -d "${HOME}/.cargo" ]; then
+    . "${HOME}/.cargo/env"
+  fi
+}
+
+# ***
+
 main() {
+  # ISOFF/2026-10-23: Should you need to build blink.cmp, enable this.
+  # - Altly: `. ~/.cargo/env && nvim` works, too.
+  #
+  #  _ev_source_environm_rustup_cargo
+
   editor_vim_0_0_insert_minimal "$@"
 }
 
