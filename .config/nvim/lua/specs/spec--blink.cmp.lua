@@ -39,10 +39,16 @@ table.insert(M, {
   -- - STEPS: Put 'cargo' on PATH and build manually:
   --   - MANLY:
   --       # DepoXy users: Put 'cargo' on PATH (call lazy-loader).
-  --       $ _hf_jit_load_rust
+  --       $ # _hf_jit_load_rust
+  --       # AnyOne users: Put 'cargo' on PATH (conventional rust-up).
+  --       $ . "${HOME}/.cargo/env"
   --       $ nvim
   --     - And then:
   --       :lua require('blink.cmp').build():wait(60000)
+  -- HSTRY/2026-10-23: Add rust-up to hello-kitty, then re-builded it:
+  --   :Lazy build blink.cmp
+  -- - Becuz startup message said to "re-run the build", I think for V2.
+  -- - REFER: |blink-cmp-installation|
   build = function()
     require("blink.cmp").build():pwait()
   end,
