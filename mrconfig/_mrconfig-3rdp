@@ -179,13 +179,14 @@ infuse = link_private_exclude "$@"
 
 # CXREF: https://github.com/fatih/vim-go
 [editorconfig/start/vim-go]
-lib = remote_set starter https://github.com/fatih/vim-go.git
-#
-# NOTED/2024-11-10: Reactivated (to start/).
-# - This is a reminder to update old hosts.
+lib =
+  remote_set starter https://github.com/fatih/vim-go.git
+  moved_from "editorconfig/opt/vim-go"
+# HSTRY/2024-11-10: Reactivated plugin.
+# - LATER: Remove this and corresponding 'moved_from' after hosts updated.
 [editorconfig/opt/vim-go]
+# CALSO: See 'moved_from' in new path config, and 'deleted' in old.
 deleted = true
-skip = mr_exclusive !vim_active
 
 [editorconfig/start/editorconfig-vim]
 lib = remote_set starter https://github.com/editorconfig/editorconfig-vim.git
