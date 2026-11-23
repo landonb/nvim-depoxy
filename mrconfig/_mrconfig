@@ -15,8 +15,20 @@
 #
 # Also add /path/to/plugins/.mrconfig to ~/.mrtrust
 
-# CXREF: The DepoXy project loads this OMR config via:
-# ~/.depoxy/ambers/home/.kit/nvim/_mrconfig
+# CXREF: The DepoXy project loads (chains) this OMR config via:
+#   depoxy/home/.kit/nvim/_mrconfig @ 41
+#
+# SETUP: DepoXy also loads the OhMyRepos lib:
+#   https://github.com/landonb/ohmyrepos#😤
+#
+# - See the load-libs mrconfig from DepoXy, e.g.:
+#   [DEFAULT]
+#   include =
+#     # CXREF: https://github.com/DepoXy/depoxy/blob/release/home/.kit/git/ohmyrepos/_mrconfig-load-libs
+#     cat "${DEPOXYAMBERS_DIR:-${HOME}/.depoxy/ambers}/home/.kit/git/ohmyrepos/_mrconfig-load-libs"
+#
+# SAVVY: The OMR libs also wire niceties like 'setup_dispatch_append'
+# to provide 'mr' action summaries.
 
 # ========================================================================
 # ------------------------------------------------------------------------
