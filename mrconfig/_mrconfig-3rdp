@@ -42,7 +42,7 @@ order = 831
 # GROUP: #colorscheme_plugins
 [arcticicestudio/opt/nord-vim]
 lib = remote_set starter https://github.com/arcticicestudio/nord-vim.git
-skip = mr_exclusive !vim_active 
+skip = mr_exclusive !vim_active
 
 # "Vim syntax for TOML"; now "included in the main (Neo)Vim distribution."
 [cespare/start/vim-toml]
@@ -1061,10 +1061,10 @@ install =
     if [ -d "${HOMEBREW_PREFIX}" ]; then
       # I.e., /opt/homebrew/opt/ruby/bin/ruby
       local ruby="${HOMEBREW_PREFIX}/opt/ruby/bin/ruby"
-      
+      #
       if ! [ -x "${ruby}" ]; then
         >&2 echo "ERROR: Homebrew ruby not found at: ${ruby}"
-        
+        #
         exit 1
       fi
       printf "%s" "${HOMEBREW_PREFIX}/opt/ruby/bin/ruby"
